@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /***********************************************************************************************************************
  * Class :- Employee Payroll Data.
@@ -19,7 +20,7 @@ public class EmployeePayrollData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long employeeId;
+    private int employeeId;
 
     private String name;
 
@@ -33,7 +34,7 @@ public class EmployeePayrollData {
 
     }
 
-    public EmployeePayrollData(long employeeId, EmployeePayrollDTO employeePayrollDTO) {
+    public EmployeePayrollData(int employeeId, EmployeePayrollDTO employeePayrollDTO) {
 
         this.employeeId = employeeId;
         this.name = employeePayrollDTO.name;
