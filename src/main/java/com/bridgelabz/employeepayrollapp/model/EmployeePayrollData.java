@@ -12,8 +12,9 @@ import javax.validation.constraints.NotNull;
  * @author Mangesh
  * @date 02-06-2022
  **********************************************************************************************************************/
-@Data
+
 @ToString
+@Data
 @Table(name = "EmployeePayroll")
 @Entity
 public class EmployeePayrollData {

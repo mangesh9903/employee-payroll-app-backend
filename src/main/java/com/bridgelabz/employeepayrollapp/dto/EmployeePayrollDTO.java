@@ -8,8 +8,8 @@ import lombok.ToString;
  * @author Mangesh
  * @date 02-06-2022
  **********************************************************************************************************************/
-@Data
 @ToString
+@Data
 public class EmployeePayrollDTO {
 
     public String name;
