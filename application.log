@@ -280,3 +280,10 @@ Caused by: java.sql.SQLException: Access denied for user 'root}'@'localhost' (us
 2022-06-05 23:11:40.804  WARN 20036 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2022-06-05 23:11:41.694  INFO 20036 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 5.257 seconds (JVM running for 6.054)
 2022-06-05 23:11:41.699  INFO 20036 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee Payroll App Started
+2022-06-05 23:19:35.697  INFO 16940 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 1.8.0_181 on LAPTOP-PUULM6OO with PID 16940 (C:\Users\Mangesh\Downloads\JavaWebApplicationStepByStep-master\employeepayrollapp\target\classes started by Mangesh in C:\Users\Mangesh\Downloads\JavaWebApplicationStepByStep-master\employeepayrollapp)
+2022-06-05 23:19:35.699 DEBUG 16940 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.7.0, Spring v5.3.20
+2022-06-05 23:19:35.699  INFO 16940 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following 1 profile is active: "dev"
+2022-06-05 23:19:40.150  WARN 16940 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-05 23:19:41.152  INFO 16940 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 5.986 seconds (JVM running for 6.639)
+2022-06-05 23:19:41.159  INFO 16940 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee Payroll App Started
+2022-06-05 23:19:41.162  INFO 16940 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee Payroll DB User is root 
