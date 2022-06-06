@@ -17,15 +17,17 @@ import java.util.List;
  **********************************************************************************************************************/
 
 @ToString
-@Table(name = "EmployeePayroll")
+@Table(name = "Employee_Payroll")
 @Entity
 public @Data
 class EmployeePayrollData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "employee_id")
     private int employeeId;
 
+    @Column(name = "name")
     private String name;
 
     private long salary;
@@ -39,6 +41,9 @@ class EmployeePayrollData {
 
     private String profilePic;
 
+    @ElementCollection
+    @CollectionTable(name = "employee_department", joinColumns = @JoinColumn(name = "id"))
+    @Column(name = "department")
     private List<String> department;
 
 
@@ -46,8 +51,11 @@ class EmployeePayrollData {
 
     }
 
-
     public EmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
+        this.updateEmployeePayrollData(employeePayrollDTO);
+    }
+
+    public void updateEmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
         this.name = employeePayrollDTO.name;
         this.salary = employeePayrollDTO.salary;
         this.gender = employeePayrollDTO.gender;
