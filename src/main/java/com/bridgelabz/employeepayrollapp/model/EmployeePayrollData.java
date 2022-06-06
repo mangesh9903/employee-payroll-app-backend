@@ -27,9 +27,6 @@ public class EmployeePayrollData {
 
     private long salary;
 
-    private String createdDate;
-
-    private String updatedDate;
 
     public EmployeePayrollData() {
 
@@ -42,4 +39,8 @@ public class EmployeePayrollData {
         this.salary = employeePayrollDTO.salary;
     }
 
+    public EmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
+        this.name = employeePayrollDTO.name;
+        this.salary = employeePayrollDTO.salary;
+    }
 }
