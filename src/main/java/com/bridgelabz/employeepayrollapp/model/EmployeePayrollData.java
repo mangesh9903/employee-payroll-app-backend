@@ -1,6 +1,7 @@
 package com.bridgelabz.employeepayrollapp.model;
 
 import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.ToString;
 
@@ -31,6 +32,7 @@ class EmployeePayrollData {
 
     private String gender;
 
+    @JsonFormat(pattern = "dd MM yyyy")
     private LocalDate startDate;
 
     private String note;
