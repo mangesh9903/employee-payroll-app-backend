@@ -45,7 +45,7 @@ public class EmployeePayrollServiceImpl implements IEmployeePayrollService {
     @Override
     public EmployeePayrollData getEmployeePayrollDataById(int empId) {
 
-        return payrollRepository.findById(empId).orElseThrow(() -> new EmployeePayrollException("Employee with Employee Id "+empId+" Does Not Exists In Database."));
+        return payrollRepository.findById(empId).orElseThrow(() -> new EmployeePayrollException("Employee with Employee Id " + empId + " Does Not Exists In Database."));
 
     }
 
@@ -59,7 +59,7 @@ public class EmployeePayrollServiceImpl implements IEmployeePayrollService {
     public EmployeePayrollData createEmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
         EmployeePayrollData empData = null;
         empData = new EmployeePayrollData(employeePayrollDTO);
-        log.debug("Emp Data: "+empData.toString());
+        log.debug("Emp Data: " + empData);
         payrollRepository.save(empData);
         return empData;
     }
@@ -89,5 +89,10 @@ public class EmployeePayrollServiceImpl implements IEmployeePayrollService {
     public void deleteEmployeePayrollData(int empId) {
         EmployeePayrollData empData = this.getEmployeePayrollDataById(empId);
         payrollRepository.delete(empData);
+    }
+
+    @Override
+    public List<EmployeePayrollData> getEmployeePayrollDataByDepartment(String department) {
+        return payrollRepository.findEmployeesByDepartment(department);
     }
 }

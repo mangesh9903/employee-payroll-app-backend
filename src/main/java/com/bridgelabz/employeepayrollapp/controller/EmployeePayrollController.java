@@ -56,6 +56,21 @@ public class EmployeePayrollController {
     }
 
     /**
+     *
+     * @param department :- passing department As Input
+     * @return :- Returning Employee Info By Department.
+     */
+    @GetMapping("/getEmpInfoByDepartment/{department}")
+    public ResponseEntity<ResponseDTO> getEmployeePayrollDataByDepartment(@PathVariable String department) {
+
+        List<EmployeePayrollData> empDataList = null;
+        empDataList = employeePayrollService.getEmployeePayrollDataByDepartment(department);
+        ResponseDTO responseDTO = new ResponseDTO("Get Call For ID Successful",
+                empDataList);
+        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
+    }
+
+    /**
      * Method :- Method to Create the Employee Payroll Data.
      *
      * @param employeePayrollDTO :- passing employeePayrollDTO As Input.
@@ -78,11 +93,11 @@ public class EmployeePayrollController {
      * @return :-  Returning ResponseDTO Object.
      */
     @PutMapping("/updateEmployee/{empId}")
-    public ResponseEntity<ResponseDTO> updateEmployeePayroll( @PathVariable("empId") int empId,@Valid @RequestBody EmployeePayrollDTO employeePayrollDTO) {
-       EmployeePayrollData empData = null;
-       empData = employeePayrollService.updateEmployeePayrollData(empId,employeePayrollDTO);
-       ResponseDTO responseDTO = new ResponseDTO("Updated Employee Payroll Data Successfully.", empData);
-       return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.OK);
+    public ResponseEntity<ResponseDTO> updateEmployeePayroll(@PathVariable("empId") int empId, @Valid @RequestBody EmployeePayrollDTO employeePayrollDTO) {
+        EmployeePayrollData empData = null;
+        empData = employeePayrollService.updateEmployeePayrollData(empId, employeePayrollDTO);
+        ResponseDTO responseDTO = new ResponseDTO("Updated Employee Payroll Data Successfully.", empData);
+        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
     }
 
     /**
