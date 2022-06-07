@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +46,8 @@ public class EmployeePayrollServiceImpl implements IEmployeePayrollService {
     @Override
     public EmployeePayrollData getEmployeePayrollDataById(int empId) {
 
-        return payrollRepository.findById(empId).orElseThrow(() -> new EmployeePayrollException("Employee with Employee Id " + empId + " Does Not Exists In Database."));
+        return payrollRepository.findById(empId).orElseThrow(() ->
+                new EmployeePayrollException("Employee with Employee Id " + empId + " Does Not Exists In Database."));
 
     }
 
@@ -91,8 +93,43 @@ public class EmployeePayrollServiceImpl implements IEmployeePayrollService {
         payrollRepository.delete(empData);
     }
 
+    /** Method :- Method to Get Employee Payroll Data By Department.
+     *
+     * @param department :- Passing department As Input.
+     * @return :- Returning Employee Payroll Data who's Department Are Same.
+     */
     @Override
     public List<EmployeePayrollData> getEmployeePayrollDataByDepartment(String department) {
         return payrollRepository.findEmployeesByDepartment(department);
+    }
+
+    /** Method :- Method to Get Employee Payroll Data By Salary.
+     *
+     * @param salary :- Passing salary As Input.
+     * @return :- Returning Employee Payroll Data who's Salary is Same.
+     */
+    @Override
+    public List<EmployeePayrollData> getEmployeePayrollDataBySalary(long salary) {
+        return payrollRepository.findEmployeesBySalary(salary);
+    }
+
+    /** Method :- Method to Get Employee Payroll Data By Gender.
+     *
+     * @param gender :- Passing gender As Input.
+     * @return :- Returning Employee Payroll Data who's gender is Same.
+     */
+    @Override
+    public List<EmployeePayrollData> getEmployeePayrollDataByGender(String gender) {
+        return  payrollRepository.findEmployeesByGender(gender);
+    }
+
+    /** Method :- Method to Get Employee Payroll Data By StartDate.
+     *
+     * @param startDate :- Passing startDate As Input.
+     * @return :- Returning Employee Payroll Data who's startDate is Same.
+     */
+    @Override
+    public List<EmployeePayrollData> getEmployeePayrollDataByStartDate(LocalDate startDate) {
+        return payrollRepository.findEmployeesByStartDate(startDate);
     }
 }

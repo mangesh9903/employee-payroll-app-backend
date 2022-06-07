@@ -64,4 +64,5 @@ class EmployeePayrollData {
         this.profilePic = employeePayrollDTO.profilePic;
         this.department = employeePayrollDTO.department;
     }
+
 }
